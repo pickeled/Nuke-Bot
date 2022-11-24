@@ -24,6 +24,6 @@ client.on('messageDelete', async (message) => {
 
     const channel = client.channels.cache.get('1040367136410959952')
     channel.send({ embeds: [embed] })
-    console.log(`${color.red(`[DELETE] ${message.guild.name} | #${message.channel.name}] `)}`
+    console.log(`${color.red(`[DELETE]  ${message.guild.name} | #${message.channel.name}] `)}`
     + `${color.gray(message.author.tag)}: ${message.content}`);
   })
