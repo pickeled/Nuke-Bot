@@ -22,7 +22,7 @@ client.on('messageDelete', async (message) => {
         embed.addFields({ name: `Attachments:`, value: `${message.attachments.map(a => a.url)}`, inline: true})
       }
 
-    const channel = client.channels.cache.get('1040367136410959952')
+    const channel = client.channels.cache.get('1045466660821278750')
     channel.send({ embeds: [embed] })
     console.log(`${color.red(`[DELETE]  ${message.guild.name} | #${message.channel.name}] `)}`
     + `${color.gray(message.author.tag)}: ${message.content}`);

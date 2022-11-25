@@ -17,7 +17,7 @@ if(oldMessage.author.id === client.user.id || newMessage.author.id == client.use
       .setFooter({ text: "Message Logger"})
       .setTimestamp()
   
-    const channel = client.channels.cache.get('1040367136410959952')
+    const channel = client.channels.cache.get('1045466660821278750')
     channel.send({ embeds: [embed] })
     console.log(`${color.yellow(`[EDIT] ${newMessage.guild.name} | #${newMessage.channel.name}]`)} `
     + `${color.gray(oldMessage.author.tag)}: ${oldMessage.content} ${color.yellow('--->')} ${color.gray(newMessage.author.tag)}: ${newMessage.content}`);
