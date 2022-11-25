@@ -1,7 +1,7 @@
 const { ApplicationCommandType } = require('discord.js');
 
 module.exports = {
-	name: 'stats',
+	name: 'test',
 	description: "Command ONLY for developers",
     cooldown: 3000,
 	type: ApplicationCommandType.ChatInput,

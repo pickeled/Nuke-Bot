@@ -4,7 +4,6 @@ const { color } = require('console-log-colors');
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
 
-if(oldMessage.author.bot || newMessage.author.bot) return;
 if(oldMessage.author == null || newMessage.author == null) return;
 if(oldMessage.guild.id !== '903005493914640455' || newMessage.guild.id !== '903005493914640455') return;
 if(oldMessage.partial == true || newMessage.partial == true) return;
@@ -23,3 +22,5 @@ if(oldMessage.author.id === client.user.id || newMessage.author.id == client.use
     console.log(`${color.yellow(`[EDIT] ${newMessage.guild.name} | #${newMessage.channel.name}]`)} `
     + `${color.gray(oldMessage.author.tag)}: ${oldMessage.content} ${color.yellow('--->')} ${color.gray(newMessage.author.tag)}: ${newMessage.content}`);
   })
+
+  
