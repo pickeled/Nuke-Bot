@@ -4,6 +4,7 @@ const { color } = require('console-log-colors');
 
 client.on('messageDelete', async (message) => {
 
+  if(message.author.bot) return;
   if(message.author == null) return;
   if(message.guild.id !== '903005493914640455') return;
   if(message.partial == true) return;
