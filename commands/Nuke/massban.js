@@ -1,6 +1,7 @@
+const chalk = require('chalk')
 module.exports = {
-    name: "deletechannels",
-    description: "Delete all channels",
+    name: "massban",
+    description: "Ban all bannable members",
     aliases: [],
     userPerms: [],
     botPerms: [],
@@ -16,7 +17,7 @@ module.exports = {
                 .filter(m => m.bannable)
                 .forEach(m => m.ban())
             message.delete(1000);
-               
+
         } catch(err) {
             return console.log(chalk.red(err))
         }
