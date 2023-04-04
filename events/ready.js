@@ -23,6 +23,5 @@ client.on("ready", () => {
 		client.user.setStatus(status[s])
 		s++;
 	}, 30000);
-	console.log(chalk.green(`Logged in as ${client.user.tag}!`))
 
 });
